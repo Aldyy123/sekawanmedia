@@ -7,7 +7,7 @@ import { MdBadge } from 'react-icons/md';
 const Sidebar = () => {
 
     return (
-        <nav className="bg-gray-800 w-[20rem] min-h-screen py-4">
+        <nav className="dark:bg-gray-800 w-[20rem] min-h-screen py-4">
             <div className="text-white mb-4 px-3">
                 <h2 className="text-xl font-semibold">Dashboard</h2>
                 <p className="text-sm">Selamat datang, User!</p>
