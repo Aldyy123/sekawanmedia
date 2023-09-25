@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .active-nav {
+    @apply before:absolute before:w-1 before:h-12 before:top-0 before:left-0 before:bg-gray-300 text-gray-50;
+  }
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
