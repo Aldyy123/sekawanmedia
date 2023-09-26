@@ -29,7 +29,7 @@ const LoginPage = () => {
             return;
         }
 
-        router.push('/dashboard');
+        user[0].role === 'user' ? router.push('/dashboard/tickets') : router.push('/dashboard');
     };
 
     return (
