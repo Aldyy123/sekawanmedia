@@ -8,31 +8,31 @@ export const sideNav = [
     {
         name: 'Overview',
         icon:  <AiFillPieChart size={22} />,
-        path: '/'
+        path: '/dashboard'
     },
     {
         name: 'Ticket',
         icon:  <BsFillTicketFill size={22} />,
-        path: '/ticket',
+        path: '/dashboard/tickets',
     },
     {
         name: 'Idea',
         icon: <FcIdea size={22} />,
-        path: '/idea',
+        path: '/dashboard/idea',
     },
     {
         name: 'Contacts',
         icon: <BiSolidContact size={22} />,
-        path: '/contacts',
+        path: '/dashboard/contacts',
     },
     {
         name: 'Agents',
         icon: <BsPersonLinesFill size={22} />,
-        path: '/agents',
+        path: '/dashboard/agents',
     },
     {
         name: 'Articles',
         icon: <MdArticle size={22} />,
-        path: '/articles',
+        path: '/dashboard/articles',
     }
 ]
