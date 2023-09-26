@@ -28,7 +28,7 @@ export default function Layout({ children }) {
             <div className={isDarkActive && 'dark'}>
                 <div className="flex w-full bg-white dark:bg-gray-700">
                     <Sidebar />
-                    <div className="w-full dark:bg-gray-700 bg-gray-200">
+                    <div className="w-full dark:bg-gray-700 bg-gray-100">
                         <Navbar />
                         <main className="p-4 mt-10">
                             {children}
