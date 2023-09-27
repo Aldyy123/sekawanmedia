@@ -2,7 +2,13 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First you install the dependencies:
+
+```bash
+npm install
+```
+
+Last, run the development server:
 
 ```bash
 npm run dev
@@ -18,6 +24,28 @@ You can start editing the page by modifying `app/page.js`. The page auto-updates
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
+
+### Information about this project
+
+- This project is using [Tailwind CSS](https://tailwindcss.com/) for styling.
+- This project is using React Version ``18.2.0``
+- This project is using Next.js Version ``13.5.2``
+- 
+
+### Account User
+
+It is have 2 account user, admin and user. You can login with this account:
+
+- Admin
+  - Email:johndoe@email.com
+  - password : 12345678
+  - role : admin
+  - name : John Doe
+- User
+  - Email:janedoe@email.com
+  - password : 12345678
+  - role : user
+  - name : Jane Doe
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

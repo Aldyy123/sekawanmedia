@@ -11,7 +11,7 @@ export const sideNav = [
         path: '/dashboard'
     },
     {
-        name: 'Ticket',
+        name: 'tickets',
         icon:  <BsFillTicketFill size={22} />,
         path: '/dashboard/tickets',
     },

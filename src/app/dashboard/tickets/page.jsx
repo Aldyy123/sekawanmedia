@@ -8,8 +8,10 @@ import FilterDropdown from "@/app/ui/components/FilterDropdown";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import { filter, sort } from "@/data/filter";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function TicketsPage() {
+  const {t} = useTranslation()
   const [listTickets, setListTickets] = useState(ticketUsers)
   const [sortingTicket, setSortingTicket] = useState(null)
   const [filterTicket, setFilterTicket] = useState(null)
@@ -45,14 +47,20 @@ export default function TicketsPage() {
     setSortingTicket(data)
   }
 
-  const changeStatus = (data) => {
-
+  const changeStatus = (data, status) => {
+    const tickets = listTickets.map((item) => {
+      if (item.id === data.id) {
+        item.status = status
+      }
+      return item
+    })
+    setListTickets(tickets)
   }
 
   return (
     <div className="rounded-md py-4 dark:bg-gray-800 bg-gray-50">
       <div className="px-10 mr-10 text-gray-800 dark:text-gray-100 flex justify-between py-5">
-        <h2>ALl Tickets</h2>
+        <h2>{t('all tickets')}</h2>
         <div className="flex gap-5 items-center">
           <FilterDropdown list={sort} type={'sort'} setData={handleSort} data={sortingTicket}>
             <FaSortAmountUpAlt size={16} />
@@ -70,16 +78,16 @@ export default function TicketsPage() {
             <thead className="text-xs uppercase border-b dark:border-gray-700 text-gray-900 dark:text-gray-100">
               <tr>
                 <th scope="col" className="px-6 py-3">
-                  Ticket Details
+                  {t('ticket details')}
                 </th>
                 <th scope="col" className="px-6 py-3">
-                  Customer Name
+                  {t('customer name')}
                 </th>
                 <th scope="col" className="px-6 py-3">
-                  Date
+                  {t('tanggal')}
                 </th>
                 <th scope="col" className="px-6 py-3">
-                  Priority
+                  {t('priority')}
                 </th>
                 <th scope="col" className="px-6 py-3">
                   Status
@@ -118,10 +126,10 @@ export default function TicketsPage() {
                         }`}>{user.priority}</span>
                     </td>
                     <td className="px-6 py-4">
-                      <span className={`rounded-md text-gray-900 dark:text-gray-50 py-2 px-2 uppercase font-medium`}>{user.status}</span>
+                      <span className={`rounded-md text-gray-900 dark:text-gray-50 py-2 px-2 uppercase font-medium`}>{t(user.status)}</span>
                     </td>
                     <td className="px-6 py-4">
-                      <Dropdown>
+                      <Dropdown setData={(status) => changeStatus(user, status)}>
                         <svg
                           className="w-5 h-5"
                           aria-hidden="true"
